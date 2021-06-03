@@ -1,3 +1,4 @@
+/*
 package com.project.RaspberryPi.controler;
 
 import com.pi4j.io.gpio.*;
@@ -24,3 +25,4 @@ public class GPIOController {
         return "OK";
     }
 }
+*/
