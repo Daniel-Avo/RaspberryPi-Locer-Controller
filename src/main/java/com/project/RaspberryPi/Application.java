@@ -8,7 +8,7 @@ public class Application {
 
     public static void main(String[] args) throws InterruptedException {
 
-        greeting();
+        System.out.println(greeting());
     }
 
     public static String greeting() {
@@ -23,6 +23,7 @@ public class Application {
 
         for (;;){
             Thread.sleep(1000);
+            System.out.println("hi");
             pin.toggle();
         }
 
