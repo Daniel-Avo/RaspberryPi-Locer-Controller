@@ -1,33 +1,15 @@
 package com.project.RaspberryPi;
 
-import com.pi4j.io.gpio.*;
+import org.springframework.boot.SpringApplication;
+
 
 public class Application {
 
-    private static GpioPinDigitalOutput pin = null;
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println(greeting());
-        light();
+        SpringApplication.run(Application.class,args);
     }
 
-    public static String greeting() {
-        return "Hello world!";
-    }
-
-    public static void light() throws InterruptedException {
-        if (pin == null) {
-            GpioController gpio = GpioFactory.getInstance();
-            pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.LOW);
-        }
-
-        for (;;){
-            Thread.sleep(1000);
-            System.out.println("hi");
-            pin.toggle();
-        }
-
-    }
 }
 
