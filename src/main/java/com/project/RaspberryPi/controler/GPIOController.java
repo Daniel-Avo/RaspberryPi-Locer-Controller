@@ -21,10 +21,8 @@ public class GPIOController {
             pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.LOW);
         }
 
-        for (;;){
-            Thread.sleep(1000);
-            System.out.println("hi");
-            pin.toggle();
-        }
+        pin.toggle();
+        Thread.sleep(3000);
+        pin.toggle();
     }
 }
