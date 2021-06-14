@@ -15,14 +15,15 @@ public class GPIOController {
     }
 
     @RequestMapping("/light")
-    public void light() throws InterruptedException {
+    public String light() throws InterruptedException {
         if (pin == null){
             GpioController gpio = GpioFactory.getInstance();
-            pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.LOW);
+            pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.HIGH);
         }
 
-        pin.toggle();
         Thread.sleep(3000);
         pin.toggle();
+
+        return "light";
     }
 }
