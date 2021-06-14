@@ -18,9 +18,10 @@ public class GPIOController {
     public String light() throws InterruptedException {
         if (pin == null){
             GpioController gpio = GpioFactory.getInstance();
-            pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.HIGH);
+            pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.LOW);
         }
 
+        pin.toggle();
         Thread.sleep(3000);
         pin.toggle();
 
