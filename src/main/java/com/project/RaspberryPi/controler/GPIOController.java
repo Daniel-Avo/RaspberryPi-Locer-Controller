@@ -9,13 +9,8 @@ public class GPIOController {
 
     private static GpioPinDigitalOutput pin = null;
 
-    @RequestMapping("/")
-    public String greeting(){
-        return "Hello world!";
-    }
-
-    @RequestMapping("/light")
-    public String light() throws InterruptedException {
+    @RequestMapping("/unlock")
+    public String unlock() throws InterruptedException {
         if (pin == null){
             GpioController gpio = GpioFactory.getInstance();
             pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.LOW);
@@ -25,6 +20,6 @@ public class GPIOController {
         Thread.sleep(3000);
         pin.toggle();
 
-        return "light";
+        return "unlocked";
     }
 }
