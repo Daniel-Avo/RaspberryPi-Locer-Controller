@@ -13,7 +13,7 @@ public class GPIOController {
     public String unlock() throws InterruptedException {
         if (pin == null){
             GpioController gpio = GpioFactory.getInstance();
-            pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.LOW);
+            pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, "LED", PinState.LOW);
         }
 
         pin.toggle();
